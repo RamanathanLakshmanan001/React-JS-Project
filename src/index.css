@@ -1,0 +1,261 @@
+*{
+  padding:0px;
+  margin:0px;
+  box-sizing: border-box;
+}
+
+body{
+  background-color: black;
+  color:white;
+}
+
+
+/* HEADER */
+
+.header{
+  display:flex;
+  justify-content: space-between;
+}
+
+.websiteName{
+  margin-top:20px;
+  margin-left:30px;
+
+  width:200px;
+  height:50px;
+  font-size:larger;
+}
+
+.navigationBar{
+  width:590px;
+  background-color: rgb(211,211,211,30%);
+}
+
+.navigationItems{
+  padding:5px;
+  margin:30px;
+
+  list-style-type:none;
+  display:flex;
+  justify-content:space-between;
+}
+
+.navigationItems li{
+  padding:3px;
+
+  font-size:1rem;
+  font-weight: bold;
+}
+
+.navigationItems li:hover{
+  cursor:pointer;
+  background-color: rgb(161, 200, 230);
+}
+
+/* HEADER */
+
+
+
+
+
+/* ABOUT */
+
+.about{
+  margin-top:10px;
+
+  display:flex;
+  justify-content: space-between;
+
+  height:500px;
+}
+
+.landingContent{
+  margin-right:10px;
+
+  text-align: center;
+  align-content: center;
+
+  background-color: rgb(211,211,211,30%);
+}
+
+.aboutContent{
+  font-size:xx-large;
+}
+
+.getStarted{
+  margin-top:30px;
+}
+
+.getStartedButton{
+  width:200px;
+  height:80px;
+
+  font-size: large;
+  font-weight:bold;
+  background-color: rgb(45, 161, 249);
+
+  border-radius: 5px;
+}
+
+.getStartedButton:hover{
+  cursor: pointer;
+  background-color:rgb(161, 200, 230);
+}
+
+.landingImage{
+  margin-left:5px;
+  background-color: rgb(211,211,211,30%);
+}
+
+.aboutImage{
+  width:600px;
+  height:500px;
+
+  padding:20px;
+
+  object-fit: fill;
+}
+
+/* ABOUT */
+
+
+
+/* Create New Blog */
+
+.createBlog{
+  display: flex;
+  flex-direction: column;
+  align-items:center;
+
+  
+  margin-top:20px;
+  padding:10px;
+
+  background-color: rgb(211,211,211,30%);
+}
+
+.createBlogLabel{
+  margin-bottom:10px;
+  font-size: xx-large;
+}
+
+
+.blogTitleInput,.blogContentInput,.blogImageInput{
+  width:800px;
+  height:50px;
+  margin:10px;
+
+  display:flex;
+  justify-content:space-evenly;
+}
+
+.newBlogTitleLabel,.newBlogContentLabel.newBlogImageLabel{
+  font-size:xx-large;
+}
+
+.newBlogTitle,.newBlogContent,.newBlogImage{
+  width:400px;
+  height:50px;
+}
+
+.addBlogButton{
+  width:150px;
+  height:50px;
+
+  margin-top:10px;
+
+  border-radius: 5px;
+  border-style: groove;
+  border-width: 5px;
+
+  font-size: 30px;
+  background-color: rgb(45, 161, 249);
+}
+
+.addBlogButton:hover{
+  background-color: rgb(161, 200, 230);
+}
+
+
+/* Create New Blog */
+
+
+
+/* BLOGS */
+
+.listOfBlogs{
+  background-color:rgb(211,211,211,30%);
+  margin-top:20px;
+
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+.blogHeading{
+  padding:30px;
+}
+
+.card{
+  margin-left: 50px;
+  width:800px;
+  height:400px;
+
+  background-color: gray;
+
+  border-style:groove;
+  border-color: black;
+  border-width: 5px;
+
+  display: flex;
+  align-items: center;
+}
+
+.blogImage{
+  object-fit: fill;
+}
+
+.blogTitle{
+  font-size:x-large;
+
+  margin-left:20px;
+  margin-top:20px;
+}
+
+.viewBlog{
+  color: rgb(19, 179, 227);
+}
+
+.editDelete{
+  width:250px;
+
+  display:flex;
+  justify-content:space-evenly;
+
+  margin-left:20px;
+  margin-top:50px;
+}
+
+.deleteButton,.editButton{
+  width:100px;
+  height:50px;
+
+  margin-right:5px;
+
+  background-color: rgb(45, 161, 249);
+}
+
+.deleteButtonImage,.editButtonImage{
+  width:30px;
+  height:30px;
+
+  margin-right:5px;
+}
+
+.deleteButton:hover,.editButton:hover{
+  background-color: rgb(161, 200, 230);
+}
+
+
+/* BLOGS */
