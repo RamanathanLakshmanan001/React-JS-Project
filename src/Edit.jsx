@@ -2,80 +2,83 @@ import { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 
 function Edit() {
+
     const { id } = useParams();
+    const navigate = useNavigate();
+
     const [blog, setBlog] = useState({
         title: "",
         content: "",
         image: "",
     });
-    const navigate = useNavigate();
 
-    // Fetch the blog from localStorage and set it in the state
     useEffect(() => {
-        const storedBlogList = JSON.parse(localStorage.getItem("blogList")) || [];
-        const foundBlog = storedBlogList.find((blog) => blog.id === parseInt(id));
+        const storedBlogList = JSON.parse(localStorage.getItem("blogs")) || [];
+        const foundBlog = storedBlogList.find((currentBlog) => currentBlog.id === parseInt(id));
         if (foundBlog) {
             setBlog(foundBlog);
         }
     }, [id]);
 
-    // Handle input change
-    const handleInputChange = (e) => {
-        const { name, value } = e.target;
+    const saveInputChanges = (event) => {
+        const { name, value } = event.target;
         setBlog((prev) => ({
             ...prev,
             [name]: value,
         }));
     };
 
-    // Handle save changes
-    const handleSaveChanges = () => {
-        const storedBlogList = JSON.parse(localStorage.getItem("blogList")) || [];
+    function saveAndUpdate() {
+        const storedBlogList = JSON.parse(localStorage.getItem("blogs")) || [];
         const updatedBlogList = storedBlogList.map((blogItem) =>
             blogItem.id === parseInt(id) ? { ...blogItem, ...blog } : blogItem
         );
 
-        // Save the updated blogList to localStorage
-        localStorage.setItem("blogList", JSON.stringify(updatedBlogList));
+        localStorage.setItem("blogs", JSON.stringify(updatedBlogList));
 
-        // After saving changes, navigate back to the blog list
         navigate("/blogs");
     };
 
     return (
-        <div>
-            <h2>Edit Blog</h2>
-            <form>
-                <div>
-                    <label>Title:</label>
+        <div className="editBlog">
+            <h2 className="editBlogLabel">Edit Blog</h2>
+            
+                <div className="blogTitleInput">
+                    <label className="editBlogTitleLabel">Blog Title</label>
                     <input
                         type="text"
                         name="title"
                         value={blog.title}
-                        onChange={handleInputChange}
+                        className="editBlogTitle"
+                        onChange={saveInputChanges}
                     />
                 </div>
-                <div>
-                    <label>Content:</label>
+
+                <div className="blogContentInput">
+                    <label className="editBlogContentLabel">Blog Content</label>
                     <textarea
                         name="content"
                         value={blog.content}
-                        onChange={handleInputChange}
+                        className="editBlogContent"
+                        onChange={saveInputChanges}
                     />
                 </div>
-                <div>
-                    <label>Image URL:</label>
+
+                <div className="blogImageInput">
+                    <label className="editBlogImageLabel">Blog Image URL</label>
                     <input
                         type="text"
                         name="image"
                         value={blog.image}
-                        onChange={handleInputChange}
+                        className="editBlogImage"
+                        onChange={saveInputChanges}
                     />
                 </div>
-                <button type="button" onClick={handleSaveChanges}>
+
+                <button type="button" onClick={saveAndUpdate} className="saveChangesButton">
                     Save Changes
                 </button>
-            </form>
+
         </div>
     );
 }

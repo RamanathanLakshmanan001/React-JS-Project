@@ -1,4 +1,5 @@
 import webImage from './assets/webImage.jpg';
+import {Link} from 'react-router-dom';
 
 function About(){
     return(
@@ -18,7 +19,12 @@ function About(){
                 <div className="landingImage">
                     <img className="aboutImage" src={webImage}></img>
                 </div>
+
             </div>
+
+            <div className="options">
+                    <Link to='/blogs' className="viewBlogs"><button className="viewBlogButton">Explore Blogs !</button></Link>
+             </div>
         </>
     );
 }

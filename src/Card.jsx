@@ -1,27 +1,23 @@
 import editButton from './assets/editButton.png';
 import deleteButton from './assets/deleteButton.png';
-import { useNavigate } from "react-router-dom";
+import { useNavigate,Link } from "react-router-dom";
 
 function Card(props) {
+
     const navigate = useNavigate();
 
-    // Handle Edit Button
-    const handleEdit = () => {
+    function editBlog() {
         navigate(`/edit/${props.blogId}`);
     };
+    
 
-    // Handle Delete Button
-    const handleDelete = () => {
-        // Get the current list of blogs from localStorage
+    function deleteBlog(){
+        
         const storedBlogs = JSON.parse(localStorage.getItem("blogs")) || [];
-        const updatedBlogs = storedBlogs.filter(blog => blog.id !== props.blogId);
+        const updatedBlogs = storedBlogs.filter(currentBlog => currentBlog.id !== props.blogId);
 
-        // Save the updated list of blogs back to localStorage
         localStorage.setItem("blogs", JSON.stringify(updatedBlogs));
-
-        // Update the state or refresh the blogs list
-        alert("Blog deleted");
-        window.location.reload();  // Reload the page to reflect the deletion
+        window.location.reload();
     };
 
     return (
@@ -32,18 +28,18 @@ function Card(props) {
 
             <div className="crud">
                 <div className="blogTitle">
-                    <p>{props.blogTitle} <a href="#" className="viewBlog">Read more...</a></p>
+                    <p>{props.blogTitle} <Link to={`/blogDetails/${props.blogId}`}>read more...</Link></p>
                 </div>
 
                 <div className="editDelete">
                     <div className="edit">
-                        <button className="editButton" onClick={handleEdit}>
+                        <button className="editButton" onClick={editBlog}>
                             <img src={editButton} className="editButtonImage" alt="Edit" />Edit
                         </button>
                     </div>
 
                     <div className="delete">
-                        <button className="deleteButton" onClick={handleDelete}>
+                        <button className="deleteButton" onClick={deleteBlog}>
                             <img src={deleteButton} className="deleteButtonImage" alt="Delete" />Delete
                         </button>
                     </div>

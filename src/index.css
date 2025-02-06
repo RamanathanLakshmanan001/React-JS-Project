@@ -5,8 +5,8 @@
 }
 
 body{
-  background-color: black;
-  color:white;
+  background-color: tan;
+  color:black;
 }
 
 
@@ -122,7 +122,7 @@ body{
 
 /* Create New Blog */
 
-.createBlog{
+.createBlog,.editBlog{
   display: flex;
   flex-direction: column;
   align-items:center;
@@ -134,7 +134,7 @@ body{
   background-color: rgb(211,211,211,30%);
 }
 
-.createBlogLabel{
+.createBlogLabel,.editBlogLabel{
   margin-bottom:10px;
   font-size: xx-large;
 }
@@ -149,17 +149,17 @@ body{
   justify-content:space-evenly;
 }
 
-.newBlogTitleLabel,.newBlogContentLabel.newBlogImageLabel{
+.newBlogTitleLabel,.newBlogContentLabel,.newBlogImageLabel,.editBlogTitleLabel,.editBlogContentLabel,.editBlogImageLabel{
   font-size:xx-large;
 }
 
-.newBlogTitle,.newBlogContent,.newBlogImage{
+.newBlogTitle,.newBlogContent,.newBlogImage,.editBlogTitle,.editBlogImage,.editBlogContent{
   width:400px;
   height:50px;
 }
 
-.addBlogButton{
-  width:150px;
+.confirmNewBlogButton,.saveChangesButton{
+  width:300px;
   height:50px;
 
   margin-top:10px;
@@ -172,12 +172,42 @@ body{
   background-color: rgb(45, 161, 249);
 }
 
-.addBlogButton:hover{
+.confirmNewBlogButton:hover{
+  background-color: rgb(161, 200, 230);
+}
+
+.saveChangesButton:hover{
   background-color: rgb(161, 200, 230);
 }
 
 
 /* Create New Blog */
+
+
+
+
+/*Explore Blogs*/
+
+.options,.viewBlogs{
+  width:100%;
+  height:300px;
+
+  display:flex;
+  justify-content:center;
+  align-items: center;
+}
+
+.viewBlogButton{
+  width:300px;
+  height:100px;
+  background-color: rgb(45, 161, 249);
+
+  font-size:2rem;
+}
+
+/*Explore Blogs*/
+
+
 
 
 
@@ -195,14 +225,20 @@ body{
 
 .blogHeading{
   padding:30px;
+  font-size:xx-large;
+}
+
+.noBlogs{
+  font-size:xx-large;
+  margin:20px;
 }
 
 .card{
-  margin-left: 50px;
+  margin: 50px;
   width:800px;
   height:400px;
 
-  background-color: gray;
+  background-color: white;
 
   border-style:groove;
   border-color: black;
@@ -213,6 +249,9 @@ body{
 }
 
 .blogImage{
+  width:300px;
+  height:200px;
+
   object-fit: fill;
 }
 
@@ -257,5 +296,73 @@ body{
   background-color: rgb(161, 200, 230);
 }
 
+.createNewBlogButton{
+  width:300px;
+  height:50px;
+
+  background-color:rgb(45, 161, 249) ;
+  font-size:large;
+}
 
 /* BLOGS */
+
+/* Detailed Blogs*/
+
+.detailedBlog{
+  display:flex;
+  flex-direction: column;
+  
+  margin:50px;
+  padding:20px;
+
+  background-color: rgb(211,211,211,30%);
+}
+
+.imgAndContentContainer{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.detailedBlogImage{
+  width:500px;
+  height:300px;
+
+  margin:10px;
+
+  object-fit: fill;
+}
+
+.detailedBlogContent{
+  margin:10px;
+  font-size:x-large;
+}
+
+.commentInput{
+  width:1000px;
+  height:100px;
+  font-size:x-large;
+}
+
+.addCommentButton{
+  width:120px;
+  height:40px;
+  
+  margin:20px;
+  background-color: rgba(28, 235, 111, 0.867);
+
+  border-radius:10px;
+  border-width:5px;
+  border-style: groove;
+}
+
+.commentContainer{
+  width:500px;
+  height:100px;
+
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  
+}
+/* Detailed Blogs*/
